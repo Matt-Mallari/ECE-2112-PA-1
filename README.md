@@ -11,6 +11,6 @@ This is achieved using Python's string slicing and indexing. Since Python uses z
 Below is the function constructed:
 
 ```
-# This is a code block
-print("Hello, World!")
+# def rotate_word(text):
+    return text[1:] + text[0]
 ```

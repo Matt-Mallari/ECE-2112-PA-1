@@ -28,3 +28,17 @@ def make_username(first_name, last_name):
     clean_last = last_name.lower().replace(" " , "")
     return clean_first + "." + clean_last
 ```
+
+# **3. The Bookend Swap Problem**
+#### **Objective:** Swap the first and last elements of a list without modifying the original input list or disrupting the order of the middle elements.
+
+This solution utilizes Python's extended sequence unpacking. By assigning the input list to the variables first, *middle, last, Python binds the first element to first, the final element to last, and uses the asterisk (*) to collect all remaining intermediate elements into a sublist called middle. To complete the swap, a new list is constructed with last at the beginning, first at the end, and *middle unpacked between them to restore the inner elements to their exact original positions.
+
+Below is the function constructed:
+
+```
+def swap_bookends(items):
+    first, *middle, last = items
+
+    return [last, *middle, first]
+```

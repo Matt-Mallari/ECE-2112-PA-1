@@ -10,7 +10,7 @@ This is achieved using Python's string slicing and indexing. Since Python uses z
 
 Below is the function constructed:
 
-```
+```python
 def rotate_word(text):
     return text[1:] + text[0]
 ```
@@ -22,7 +22,7 @@ To implement this efficiently, we chain two built-in string methods together. Th
 
 Below is the function constructed:
 
-```
+```python
 def make_username(first_name, last_name):
     clean_first = first_name.lower().replace(" ","")
     clean_last = last_name.lower().replace(" " , "")
@@ -36,7 +36,7 @@ This solution utilizes Python's extended sequence unpacking. By assigning the in
 
 Below is the function constructed:
 
-```
+```python
 def swap_bookends(items):
     first, *middle, last = items
 

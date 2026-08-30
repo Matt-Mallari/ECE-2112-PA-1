@@ -69,7 +69,7 @@ This utilizes Python's extended sequence unpacking. By placing variables on the 
 ```
 To complete the swap, a new list is bracketed and returned with last at the beginning and first at the end. The *middle variable is unpacked between them, restoring the inner elements to their exact original positions.
 
-To see the main Python program for Experiment 1, click this link (Insert Link Here), download the .ipynb file, open it in Jupyter Notebook, and run all cells.
+To see the main Python program for Experiment 1, click this link https://github.com/Matt-Mallari/ECE-2112-PA-1/blob/main/PA-1.ipynb, download the .ipynb file, open it in Jupyter Notebook, and run all cells.
 
 ### **README File Version History**
 * 2026, August 21: File Created

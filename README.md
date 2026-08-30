@@ -43,5 +43,6 @@ def swap_bookends(items):
     return [last, *middle, first]
 ```
 
-### **File Version History**
+### **README File Version History**
 * 2026, August 21: File Created
+* 2026, August 30: Added link to .pynb file | Improved discussion

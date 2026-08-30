@@ -4,17 +4,27 @@
 This repository breaks down the objectives and provides a detailed, step-by-step discussion for each problem in Experiment 1 (PA-1). This experiment introduces foundational Python programming concepts through three specific string and list manipulation challenges.
 
 # **1. The Word Rotation Problem**
-#### **Objective:** Create a function named rotate_word() that accepts a non-empty string. Move the first character of the string to the end while preserving 
-both the original capitalization and the order of the remaining letters.
+#### **Objective:** Create a function named rotate_word() that accepts a non-empty string. Move the first character of the string to the end while preserving both the original capitalization and the order of the remaining letters.
 
-This is achieved using Python's string slicing and indexing. Since Python uses zero-based indexing, text[0] extracts the initial character, while text[1:] captures the rest of the string from the second character onward. By concatenating these two parts (text[1:] + text[0]), the first character is seamlessly appended to the back. Because this approach simply rearranges existing segments rather than altering the characters themselves, the original case is naturally maintained.
-
-Below is the function constructed:
+The Following Methods/Functions were used:
 
 ```python
-def rotate_word(text):
-    return text[1:] + text[0]
+def rotate_word(text: str) -> str:
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError("Argument must be a non-empty string.")
 ```
+To ensure the function is robust, type hinting (text: str -> str) is used to specify expected inputs and outputs. The isinstance() function verifies the input is strictly a string. Additionally, .strip() evaluates if the user inputted only blank spaces, allowing the function to raise a ValueError for invalid or empty inputs.
+
+```python
+if len(text) <= 1:
+        return text
+```
+The len() function identifies the character count. If the string is a single character (or somehow empty despite previous checks), it returns the input immediately to prevent unnecessary processing or slicing errors.
+
+```python
+return text[1:] + text[0]
+```
+This achieves the rotation using Python's string slicing. Since Python uses zero-based indexing, text[0] extracts the initial character, while text[1:] captures the rest of the string from the second character onward. By concatenating these parts, the first character is seamlessly appended to the back. Because this rearranges existing segments rather than altering the characters themselves, the original case is naturally maintained.
 
 # **2. The Username Builder Problem**
 #### **Objective:** Process a first and last name into a standardized username format that is entirely lowercase, contains no spaces, and is separated by a single period.

@@ -48,19 +48,29 @@ To implement this efficiently, two built-in string methods are chained. The .low
 Once both names are sanitized, they are concatenated with a literal period (".") in the center to produce and return the final, formatted username string.
 
 # **3. The Bookend Swap Problem**
-#### **Objective:** Swap the first and last elements of a list without modifying the original input list or disrupting the order of the middle elements.
+#### **Objective:** Create a function named swap_bookends() that accepts a list containing at least two elements, swapping the first and last elements without disrupting the order of the middle elements.
 
-This solution utilizes Python's extended sequence unpacking. By assigning the input list to the variables first, *middle, last, Python binds the first element to first, the final element to last, and uses the asterisk (*) to collect all remaining intermediate elements into a sublist called middle. To complete the swap, a new list is constructed with last at the beginning, first at the end, and *middle unpacked between them to restore the inner elements to their exact original positions.
-
-Below is the function constructed:
+The Following Methods/Functions were used:
 
 ```python
-def swap_bookends(items):
-    first, *middle, last = items
-
-    return [last, *middle, first]
+def swap_bookends(items: list) -> list:
+    if len(items) < 2:
+        raise ValueError("List must contain at least two elements.")
 ```
+The function enforces a list input via type hinting. The len() function acts as a safeguard; if a list with fewer than two elements is passed, a ValueError is triggered, preventing unpacking errors later in the execution.
+
+```python
+    first, *middle, last = items
+```
+This utilizes Python's extended sequence unpacking. By placing variables on the left side of the assignment operator, Python binds the first element to first, the final element to last, and uses the asterisk (*) to collect all intermediate elements into a sublist called middle.
+
+```python
+   return [last, *middle, first]
+```
+To complete the swap, a new list is bracketed and returned with last at the beginning and first at the end. The *middle variable is unpacked between them, restoring the inner elements to their exact original positions.
+
+To see the main Python program for Experiment 1, click this link (Insert Link Here), download the .ipynb file, open it in Jupyter Notebook, and run all cells.
 
 ### **README File Version History**
 * 2026, August 21: File Created
-* 2026, August 30: Added link to .pynb file | Improved discussion
+* 2026, August 30: Added link to .pynb file | Segmented code blocks for detailed, line-by-line methodological explanations. Added Jupyter Notebook file link and finalized formatting.

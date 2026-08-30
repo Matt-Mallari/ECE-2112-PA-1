@@ -16,13 +16,13 @@ def rotate_word(text: str) -> str:
 To ensure the function is robust, type hinting (text: str -> str) is used to specify expected inputs and outputs. The isinstance() function verifies the input is strictly a string. Additionally, .strip() evaluates if the user inputted only blank spaces, allowing the function to raise a ValueError for invalid or empty inputs.
 
 ```python
-if len(text) <= 1:
+    if len(text) <= 1:
         return text
 ```
 The len() function identifies the character count. If the string is a single character (or somehow empty despite previous checks), it returns the input immediately to prevent unnecessary processing or slicing errors.
 
 ```python
-return text[1:] + text[0]
+    return text[1:] + text[0]
 ```
 This achieves the rotation using Python's string slicing. Since Python uses zero-based indexing, text[0] extracts the initial character, while text[1:] captures the rest of the string from the second character onward. By concatenating these parts, the first character is seamlessly appended to the back. Because this rearranges existing segments rather than altering the characters themselves, the original case is naturally maintained.
 

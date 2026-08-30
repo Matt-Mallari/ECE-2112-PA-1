@@ -73,4 +73,4 @@ To see the main Python program for Experiment 1, click this link https://github.
 
 ### **README File Version History**
 * 2026, August 21: File Created
-* 2026, August 30: Added link to .pynb file | Segmented code blocks for detailed, line-by-line methodological explanations. Added Jupyter Notebook file link and finalized formatting.
+* 2026, August 30: Added link to .pynb file | Segmented code blocks for detailed, line-by-line methodological explanations. | Added Jupyter Notebook file link and finalized formatting.

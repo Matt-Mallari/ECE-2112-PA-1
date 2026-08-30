@@ -27,18 +27,25 @@ return text[1:] + text[0]
 This achieves the rotation using Python's string slicing. Since Python uses zero-based indexing, text[0] extracts the initial character, while text[1:] captures the rest of the string from the second character onward. By concatenating these parts, the first character is seamlessly appended to the back. Because this rearranges existing segments rather than altering the characters themselves, the original case is naturally maintained.
 
 # **2. The Username Builder Problem**
-#### **Objective:** Process a first and last name into a standardized username format that is entirely lowercase, contains no spaces, and is separated by a single period.
+#### **Objective:** Create a function named make_username() that processes a first and last name into a standardized username format that is entirely lowercase, contains no spaces, and is separated by a single period.
 
-To implement this efficiently, we chain two built-in string methods together. The .lower() method converts all letters to lowercase, while .replace(" ", "") substitutes any space characters with an empty string to remove them entirely. Once both names are sanitized, they are concatenated with a literal period (".") in the center to produce the final, formatted username string.
-
-Below is the function constructed:
+The Following Methods/Functions were used:
 
 ```python
-def make_username(first_name, last_name):
-    clean_first = first_name.lower().replace(" ","")
-    clean_last = last_name.lower().replace(" " , "")
+def make_username(first_name: str, last_name: str) -> str:
+```
+The function is established with type hints requiring two distinct string inputs for the first and last names, explicitly returning a single formatted string.
+
+```python
+    clean_first = first_name.lower().replace(" ", "")
+    clean_last = last_name.lower().replace(" ", "")
+```
+To implement this efficiently, two built-in string methods are chained. The .lower() method converts all letters to lowercase. Immediately after, .replace(" ", "") substitutes any space characters with an empty string, effectively stripping out all spaces from multi-word names (e.g., "Mary Jane").
+
+```python
     return clean_first + "." + clean_last
 ```
+Once both names are sanitized, they are concatenated with a literal period (".") in the center to produce and return the final, formatted username string.
 
 # **3. The Bookend Swap Problem**
 #### **Objective:** Swap the first and last elements of a list without modifying the original input list or disrupting the order of the middle elements.
